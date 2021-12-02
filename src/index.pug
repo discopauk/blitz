@@ -5,6 +5,7 @@ html(lang="ru")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		title= htmlWebpackPlugin.options.title
+		meta(name="description", content=`${htmlWebpackPlugin.options.title} — международная компания по управлению недвижимостью и финансами.`)
 	body
 		header.header
 			.header__menu
@@ -51,7 +52,8 @@ html(lang="ru")
 				button.btn_main Подобрать недвижимость
 			section.quiz
 				.quiz__head
-					h2.quiz__main-title Пройдите тест из 5 вопросов
+					h2.hidden Тест для поиска покупателей 
+					p.quiz__main-title Пройдите тест из 5 вопросов
 					p.quiz__desc Мы подберём 20 покупателей готовых купить вашу недвижимость в течение 24 часов
 				.quiz__main
 					h3.quiz__title Выберите местоположение объекта
@@ -96,7 +98,7 @@ html(lang="ru")
 					- let data = require("./data.json")
 					for key in data
 						li.apartment__item
-							img.apartment__image(src=require(`../img/apartment${key.id}.webp`) width="555" height="300")
+							img.apartment__image(src=require(`../img/apartment${key.id}.webp`) width="555" height="300" alt="")
 							.apartment__card
 								h3.apartment__title= key.name
 								.apartment__lot= `Лот № ${key.lot}` 
@@ -119,15 +121,15 @@ html(lang="ru")
 				.about__visual
 					ul.gallery
 						li.gallery__item.is-main
-							img(src=require("../img/about1.jpg"), alt="" width="562" height="450") 
+							img(src=require("../img/about1.webp"), alt="" width="562" height="450") 
 						li.gallery__item
-							img(src=require("../img/about2.jpg"), alt="" width="133" height="106") 
+							img(src=require("../img/about2.webp"), alt="" width="133" height="106") 
 						li.gallery__item 
-							img(src=require("../img/about3.jpg"), alt="" width="133" height="106") 
+							img(src=require("../img/about3.webp"), alt="" width="133" height="106") 
 						li.gallery__item 
-							img(src=require("../img/about4.jpg"), alt="" width="133" height="106") 
+							img(src=require("../img/about4.webp"), alt="" width="133" height="106") 
 						li.gallery__item 
-							img(src=require("../img/about5.jpg"), alt="" width="133" height="106") 
+							img(src=require("../img/about5.webp"), alt="" width="133" height="106") 
 			section.direct 
 				h2.direct__main-title Направления нашего агенства
 				ul.direct__list
@@ -141,7 +143,7 @@ html(lang="ru")
 								a(href="mailto:moscow@blitz.estate") moscow@blitz.estate
 							img(src=require(`../img/direct${index+1}.svg`) alt="" width="147" height="135")  
 			section.coo
-				h2.hidden 
+				h2.hidden Руководитель агенства
 				.coo__text
 					p.coo__title= `Руководитель агентства ${htmlWebpackPlugin.options.title}`
 					p.coo__subtitle Александр Смирнов
@@ -149,7 +151,7 @@ html(lang="ru")
 					p Имея европейский опыт работы и показывая верность своему делу, мы являемся стратегическим партнером ММДЦ «Москва-Сити с 2013 года на эксклюзивной реализации объектов приватных к продаже.
 					p Благодаря кропотливому и теплому отношению нам удается быстро и эффективно оказывать клиентам услуги высочайшего уровня в сфере недвижимости.
 					button.btn_main Задать вопрос
-				img.coo__visual(src=require("../img/coo.jpg") alt="" width="445" height="534")
+				img.coo__visual(src=require("../img/coo.webp") alt="" width="445" height="534")
 		footer.footer 
 			.footer__info 	
 				.footer__time 
