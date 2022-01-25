@@ -1,4 +1,4 @@
-require("./style/main.scss");
+import "./style/main.scss";
 
 // menu 
 document.querySelector(".header__menu").addEventListener("click", () => {

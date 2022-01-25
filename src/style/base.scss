@@ -9,7 +9,7 @@ html {
 	color: $text;
 	font: 400 16px/1.63 "Geometria", sans-serif;
 	letter-spacing: normal;
-	background-image: url("../../img/head.webp");
+	background-image: url("~/img/head.webp");
 	background-repeat: no-repeat;
 	background-position-y: $half;
 	@include mobile-wide-only {
