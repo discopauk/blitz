@@ -1,0 +1,16 @@
+section.coo
+  h2.hidden Руководитель агенства
+  .coo__text
+    p.coo__title= `Руководитель агентства ${htmlWebpackPlugin.options.title}`
+    p.coo__subtitle Александр Смирнов
+    p= `Вице-президент по проектам в ММДЦ «Москва-Сити», Генеральный директор компании ${htmlWebpackPlugin.options.title} в России.`
+    p Имея европейский опыт работы и показывая верность своему делу, мы являемся стратегическим партнером ММДЦ «Москва-Сити с 2013 года на эксклюзивной реализации объектов приватных к продаже.
+    p Благодаря кропотливому и теплому отношению нам удается быстро и эффективно оказывать клиентам услуги высочайшего уровня в сфере недвижимости.
+    button.btn_main Задать вопрос 
+  picture 
+    source(type="image/webp" 
+      srcset=require(`../../img/coo.webp`) + " 1x, " + require(`../../img/coo-2x.webp`) + " 2x")
+    img.coo__visual(src=require(`../../img/coo.jpg`) 
+      srcset=`../../img/coo-2x.jpg 2x` 
+      width="445" height="534", 
+      alt="" loading="lazy")

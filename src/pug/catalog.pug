@@ -1,0 +1,32 @@
+section.apartment
+  h2.apartment__main-title Выберите апартаменты в Москва-Сити
+  p.apartment__desc Мы включили в наш каталог все апартаменты, доступные для покупки в Москва-Сити
+  ul.filters 
+    li.filters__btn.active Показать все
+    li.filters__btn.filters__btn--price(data-from="20" data-to="30") От 20-30 млн
+    li.filters__btn.filters__btn--price(data-from="30" data-to="50") От 30-50 млн
+    li.filters__btn.filters__btn--price(data-from="50" data-to="100") От 50-100 млн
+    li.filters__btn.filters__btn--price(data-from="100" data-to="100000") Более 100 млн
+  ul.apartment__list
+    - let data = require("../data.json")
+    for key in data
+      li.apartment__item(data-price=`${parseInt(key.price)}`)
+        picture
+          source(type="image/webp" 
+            srcset=require(`../../img/apartment${key.id}.webp`) + " 1x, " + require(`../../img/apartment${key.id}-2x.webp`) + " 2x")
+          img.apartment__image(src=require(`../../img/apartment${key.id}.jpg`) 
+            srcset=`../../img/apartment${key.id}-2x.jpg 2x` 
+            width="555" height="300", 
+            alt="" loading="lazy")
+        .apartment__card
+          h3.apartment__title= key.name
+          .apartment__lot= `Лот № ${key.lot}` 
+          .apartment__price= `${key.price} ₽`
+          .apartment__area= `Площадь ${key.area}` 
+          .apartment__price-metr= `${key.perM} ₽ за м` 
+            sup 2 
+          .apartment__floor= `Этаж ${key.floor}` 
+        button.btn_sub Назначить просмотр
+  button.show 
+    | Показать ещё 
+    include ../../img/more.svg

@@ -7,165 +7,21 @@ html(lang="ru")
 		title= htmlWebpackPlugin.options.title
 		meta(name="description", content=`${htmlWebpackPlugin.options.title} — международная компания по управлению недвижимостью и финансами.`)
 	body
-		header.header
-			.header__menu
-				.burg
-					.burg__line 
-					.burg__line
-					.burg__line
-				span Меню
-			nav.main-menu.hidden 
-				ul.main-menu__list 
-					each item in ["Главная", "Тест", "Услуги", "Апартаменты", "О нас", "Направления", "Руководитель"]
-						li.main-menu__item: a(href="#")= item
-			.header__main
-				img.logo(src=require("../img/logo.svg") alt="Логотип Blitz Estate" width="141" height="110")
-				p Продажа недвижимости в Москва-Сити
-			.header__service
-				a(href="tel:+74951991999") +7 (495) 199-19-99
-				button.btn_sub Заказать звонок
-		main 
-			section.hero
-				h1.hidden= htmlWebpackPlugin.options.title
-				p.hero__title= `Агентство с международным именем ${htmlWebpackPlugin.options.title}`
-				p.hero__desc
-					| Поможем продать, купить и арендовать 
-					br 
-					| недвижимость в Москве, районе Сити и области
-				dl.hero__list
-					.hero__item
-						dt 17
-						dd Работаем в 17 странах
-					.hero__item
-						dt 1963
-						dd Помогли 1963-м клиентам
-					.hero__item
-						dt 10
-						dd Лет на рынке недвижимости
-				.hero__gift
-					img(src=require("../img/test.webp"), alt="" width="60" height="73")
-					p
-						| Пройди тест и получи в подарок бутылку шампанского 
-						b Veuve Clicquot
-				button.btn_main Подобрать недвижимость
-			section.quiz
-				.quiz__head
-					h2.hidden Тест для поиска покупателей 
-					p.quiz__main-title Пройдите тест из 5 вопросов
-					p.quiz__desc Мы подберём 20 покупателей готовых купить вашу недвижимость в течение 24 часов
-				.quiz__main
-					h3.quiz__title Выберите местоположение объекта
-					ul.quiz__list
-						li.quiz__item 
-							figure 
-								img(src=require("../img/quiz1.webp") alt="" width="334" height="217")
-								figcaption В России
-						li.quiz__item
-							figure
-								img(src=require("../img/quiz2.webp") alt="" width="334" height="217")
-								figcaption За границей
-				.quiz__answers 
-					span Вы ответили на: 0/5 вопросов
-					button.back.not-allowed
-						img(src=require("../img/arrow.svg"), alt="" width="21" height="13") 
-						| Назад
-					button.continue Продолжить
-						img(src=require("../img/arrow.svg"), alt="" width="21" height="13")
-				ul.quiz__profit
-					li.quiz__profit_item Поможем Вам приобрести, продать или арендовать необходимую недвижимость
-					li.quiz__profit_item Продадим Вашу недвижимость за 21 день или выкупим сами по стоимости в договоре
-					li.quiz__profit_item Забронируем понравившуюся квартиру и зафиксируем стоимость для вас на момент бронирования
-			section.service
-				h2.service__main-title Наши услуги на международном рынке
-				ul.service__list
-					each val in ["Жилая недвижимость", "Доходная недвижимость", "Инвестиционные операции", "Покупка яхт", "Доверительное управление", "Консьерж сервис"]
-						li.service__item 
-							h3.service__title= val
-							p.service__desc Сопровождение сделок по продаже, купли и аренде объектов недвижимости под ключ.
-							button.btn_more Узнать больше
-			section.apartment
-				h2.apartment__main-title Выберите апартаменты в Москва-Сити
-				p.apartment__desc Мы включили в наш каталог все апартаменты, доступные для покупки в Москва-Сити
-				ul.filters 
-					li.filters__btn.active Показать все
-					li.filters__btn От 20-30 млн
-					li.filters__btn От 30-50 млн
-					li.filters__btn От 50-100 млн
-					li.filters__btn Более 100 млн
-				ul.apartment__list
-					- let data = require("./data.json")
-					for key in data
-						li.apartment__item
-							img.apartment__image(src=require(`../img/apartment${key.id}.webp`) width="555" height="300" alt="")
-							.apartment__card
-								h3.apartment__title= key.name
-								.apartment__lot= `Лот № ${key.lot}` 
-								.apartment__price= `${key.price} ₽`
-								.apartment__area= `Площадь ${key.area}` 
-								.apartment__price-metr= `${key.perM} ₽ за м` 
-									sup 2 
-								.apartment__floor= `Этаж ${key.floor}` 
-							button.btn_sub Назначить просмотр
-				button.show 
-					| Показать ещё 
-					include ../img/more.svg
-			section.about
-				h2.hidden О нас
-				.about__text
-					p.about__title= `${htmlWebpackPlugin.options.title} — на рынке недвижимости с 2008 года`
-					p= `${htmlWebpackPlugin.options.title} — международная компания по управлению недвижимостью и финансами. Основана в 2008 г. в Австрии. На сегодня представлена в Англии, Испании, Латвии, ОАЭ, Австрии и России, кроме того имеет партнерскую сеть более чем в десяти странах мира.`
-					p Мы предоставляем услуги полного цикла по приобретению и продаже недвижимости и управлению активами, предоставляя клиентам неизменно высокое качество сервиса. Наш подход позволяет оптимизировать инвестиционный портфель, диверсифицировать риски и обеспечить полную конфиденциальность сделки.
-					button.btn_main Узнать больше
-				.about__visual
-					ul.gallery
-						li.gallery__item.is-main
-							img(src=require("../img/about1.webp"), alt="" width="562" height="450") 
-						li.gallery__item
-							img(src=require("../img/about2.webp"), alt="" width="133" height="106") 
-						li.gallery__item 
-							img(src=require("../img/about3.webp"), alt="" width="133" height="106") 
-						li.gallery__item 
-							img(src=require("../img/about4.webp"), alt="" width="133" height="106") 
-						li.gallery__item 
-							img(src=require("../img/about5.webp"), alt="" width="133" height="106") 
-			section.direct 
-				h2.direct__main-title Направления нашего агенства
-				ul.direct__list
-					each key, index in ["Аренда жилой недвижимости", "Аренда коммерческой недвижимости", "Отдел блиц-сделок", "Продажа недвижимости", "Продажа новостроек", "Продажа недвижимости на вторичном рынке"]
-						li.direct__item 
-							h3.direct__title= key
-							.direct__service 
-								span.direct__post Руководитель 
-								.direct__head Александр Смирнов
-								a(href="tel:+74951991999") +7(495)199-19-99
-								a(href="mailto:moscow@blitz.estate") moscow@blitz.estate
-							img(src=require(`../img/direct${index+1}.svg`) alt="" width="147" height="135")  
-			section.coo
-				h2.hidden Руководитель агенства
-				.coo__text
-					p.coo__title= `Руководитель агентства ${htmlWebpackPlugin.options.title}`
-					p.coo__subtitle Александр Смирнов
-					p= `Вице-президент по проектам в ММДЦ «Москва-Сити», Генеральный директор компании ${htmlWebpackPlugin.options.title} в России.`
-					p Имея европейский опыт работы и показывая верность своему делу, мы являемся стратегическим партнером ММДЦ «Москва-Сити с 2013 года на эксклюзивной реализации объектов приватных к продаже.
-					p Благодаря кропотливому и теплому отношению нам удается быстро и эффективно оказывать клиентам услуги высочайшего уровня в сфере недвижимости.
-					button.btn_main Задать вопрос
-				img.coo__visual(src=require("../img/coo.webp") alt="" width="445" height="534")
-		footer.footer 
-			.footer__info 	
-				.footer__time 
-					p Время работы: 
-					p Пн-Пт: 8:00-23:00, Сб-Вс: 9:00-21:00
-				.footer__address 
-					address Пресненская набережная, дом 12 Башня "Федерация"  Восток, 31 этаж, Офис Р
-				.footer__regnum 
-					p ОГРН: 1187746683464
-					p ИНН: 7703462548
-			.footer__main
-				img.logo(src=require("../img/logo_white.svg") alt="Логотип Blitz Estate" width="141" height="110")
-				p 
-					| Продажа недвижимости 
-					| в Москва-Сити
-			.footer__service 
-				a(href="tel:+74951991999") +7 (495) 199-19-99
-				a(href="mailto:moscow@blitz.estate") moscow@blitz.estate
-				button.btn_sub Заказать звонок
+		include ./pug/header.pug 
+		main
+			include ./pug/hero.pug 
+			include ./pug/quiz.pug 
+			include ./pug/services.pug 
+			include ./pug/catalog.pug 
+			include ./pug/about.pug 
+			include ./pug/directions.pug 
+			include ./pug/coo.pug 
+		include ./pug/footer.pug 
+
+
+
+
+
+
+
+

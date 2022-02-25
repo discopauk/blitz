@@ -1,0 +1,12 @@
+section.direct 
+  h2.direct__main-title Направления нашего агенства
+  ul.direct__list
+    each key, index in ["Аренда жилой недвижимости", "Аренда коммерческой недвижимости", "Отдел блиц-сделок", "Продажа недвижимости", "Продажа новостроек", "Продажа недвижимости на вторичном рынке"]
+      li.direct__item 
+        h3.direct__title= key
+        .direct__service 
+          span.direct__post Руководитель 
+          .direct__head Александр Смирнов
+          a(href="tel:+74951991999") +7(495)199-19-99
+          a(href="mailto:moscow@blitz.estate") moscow@blitz.estate
+        img(src=require(`../../img/direction${index+1}.svg`) alt="" width="147" height="135")  

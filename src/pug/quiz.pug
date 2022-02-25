@@ -1,0 +1,31 @@
+section.quiz
+  - let list = ["В Росии", "За границей"]
+  .quiz__head
+    h2.hidden Тест для поиска покупателей 
+    p.quiz__main-title Пройдите тест из 5 вопросов
+    p.quiz__desc Мы подберём 20 покупателей готовых купить вашу недвижимость в течение 24 часов
+  .quiz__main
+    h3.quiz__title Выберите местоположение объекта
+    ul.quiz__list
+      each item in list 
+        li.quiz__item 
+          figure 
+            picture 
+              source(type="image/webp" 
+                srcset=require(`../../img/quiz${list.indexOf(item)+1}.webp`) + " 1x, " + require(`../../img/quiz${list.indexOf(item)+1}-2x.webp`) + " 2x")
+              img.quiz__image(src=require(`../../img/quiz${list.indexOf(item)+1}.jpg`) 
+                srcset=`../../img/quiz${list.indexOf(item)+1}-2x.jpg 2x` 
+                width="334" height="217", 
+                alt="" loading="lazy")
+            figcaption= item
+  .quiz__answers 
+    span Вы ответили на: 0/5 вопросов
+    button.back.not-allowed
+      img(src=require("../../img/arrow.svg"), alt="" width="21" height="13") 
+      | Назад
+    button.continue Продолжить
+      img(src=require("../../img/arrow.svg"), alt="" width="21" height="13")
+  ul.quiz__profit
+    li.quiz__profit_item Поможем Вам приобрести, продать или арендовать необходимую недвижимость
+    li.quiz__profit_item Продадим Вашу недвижимость за 21 день или выкупим сами по стоимости в договоре
+    li.quiz__profit_item Забронируем понравившуюся квартиру и зафиксируем стоимость для вас на момент бронирования

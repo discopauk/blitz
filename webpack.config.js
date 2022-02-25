@@ -61,7 +61,6 @@ module.exports = (env, argv) => {
 		plugins: [
 			new HtmlWebpackPlugin({
 				title: "Blitz Estate",
-				favicon: "./img/favicon.ico",
 				template: "./src/index.pug"
 			}),
 			new ESLintPlugin(),

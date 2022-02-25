@@ -1,170 +1,177 @@
 .btn {
-	&_main {
-		@extend %btn;
-		@extend %main_bg;
-		padding: $md $xxl;
-		font-size: $md;
-		font-family: "Geometria-Bold";
-		transition: transform $tr;
-		&:hover {
-			transform: scale(1.05);
-		}
-	}
-	&_more {
-		@extend %more;
-		@extend %main_bg;
-	}
-	&_sub {
-		@extend %btn;
-		@extend %tr_text;
-		position: relative;
-		margin-top: $normal;
-		padding: $normal $xl;
-		overflow: hidden;
-		transition: color $tr;
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 100%;
-			background-color: $main;
-			transform: translateX(-100%);
-			transition: transform $tr;
-		}
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 100%;
-			background-color: $bg;
-			transition: transform $tr;
-			z-index: -2;
-		}
-		&:hover {
-			color: $bg;
-			&::before {
-				transform: translateX(0);
-				z-index: -1;
-			}
-		}
-	}
+  &_main {
+    @extend %btn;
+    @extend %main_bg;
+    padding: $normal $md;
+    font-size: $md;
+    font-family: "Geometria-Bold";
+    transition: transform $tr;
+    @include hover {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &_more {
+    @extend %more;
+    @extend %main_bg;
+  }
+  &_sub {
+    @extend %btn;
+    @extend %tr_text;
+    position: relative;
+    margin-top: $normal;
+    padding: $normal $xl;
+    overflow: hidden;
+    transition: color $tr;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $main;
+      transform: translateX(-100%);
+      transition: transform $tr;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $bg;
+      transition: transform $tr;
+      z-index: -2;
+    }
+    @include hover {
+      &:hover {
+        color: $bg;
+        &::before {
+          transform: translateX(0);
+          z-index: -1;
+        }
+      }
+    }
+  }
 }
 .show {
-	@extend %more;
-	@extend %tr_text;
-	margin-top: $normal;
-	transition: background-color $tr,
-							color $tr;
-	border-radius: $sm;
-	svg {
-		fill: $text;
-		transition: fill $tr;
-	}
-	&:hover {
-		@extend %main_bg;
-		svg {
-			fill: $bg;
-		}
-	}
+  @extend %more;
+  @extend %tr_text;
+  margin-top: $normal;
+  transition: background-color $tr, color $tr;
+  border-radius: $sm;
+  svg {
+    fill: $text;
+    transition: fill $tr;
+  }
+  &:hover {
+    @extend %main_bg;
+    svg {
+      fill: $bg;
+    }
+  }
 }
 .continue {
-	@extend %arrow;
+  @extend %arrow;
 }
 .back {
-	@extend %arrow;
-	img {
-		transform: rotate(180deg);
-	}
+  @extend %arrow;
+  img {
+    transform: rotate(180deg);
+  }
 }
 .burg {
-	height: $xl;
-	z-index: 10;
-	&__line {
-		margin-bottom: 10px;
-		background-color: $main;
-		height: 3px;
-		transition: transform $tr;
-		&:nth-of-type(1) {
-			width: $xl;
-		}
-		&:nth-of-type(2) {
-			width: $semi;
-		}
-		&:nth-of-type(3) {
-			width: $normal;
-		}
-	}
+  height: $xl;
+  z-index: 10;
+  &__line {
+    margin-bottom: 10px;
+    background-color: $main;
+    height: 3px;
+    transition: transform $tr;
+    &:nth-of-type(1) {
+      width: $xl;
+    }
+    &:nth-of-type(2) {
+      width: $semi;
+    }
+    &:nth-of-type(3) {
+      width: $normal;
+    }
+  }
 }
 .is-open {
-	div:nth-child(1) {
-		transform: rotate(45deg) translateX(18px) scale(1);
-	}
-	div:nth-child(2) {
-		transform: scale(0);
-	}
-	div:nth-child(3) {
-		width: $xl;
-		transform: rotate(-45deg) translateX(20px) scale(1);
-	}
+  div:nth-child(1) {
+    transform: rotate(45deg) translateX(18px) scale(1);
+  }
+  div:nth-child(2) {
+    transform: scale(0);
+  }
+  div:nth-child(3) {
+    width: $xl;
+    transform: rotate(-45deg) translateX(20px) scale(1);
+  }
 }
 .filters {
-	display: flex;
-	align-items: stretch;
-	justify-content: space-between;
-	margin: $xl 0 $lg 0;
-	column-gap: $xs;
-	@include mobile-wide-only {
-		flex-wrap: wrap;
-		justify-content: start;
-	}
-	&__btn {
-		padding: $normal $xxl;
-		cursor: pointer;
-		border: 1px solid transparent;
-		transition: background-color $tr,
-								color $tr;
-		@include desktop {
-			padding-left: $xl;
-			padding-right: $xl;
-		}
-		&.active, &:hover {
-			border-color: $main;
-		}
-		&.active {
-			@extend %main_bg;
-		}
-	}
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: $xl 0 $lg 0;
+  column-gap: $xs;
+  @include mobile-wide-only {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  &__btn {
+    padding: $normal $xxl;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color $tr, color $tr;
+    @include desktop {
+      padding-left: $xl;
+      padding-right: $xl;
+    }
+    &.active {
+      border-color: $main;
+      @extend %main_bg;
+    }
+    @include hover {
+      &:hover {
+        border-color: $main;
+      }
+    }
+  }
 }
 .gallery {
-	display: grid;
-	grid-template-columns: repeat(4, 133px);
-	grid-template-rows: 450px 106px;
-	grid-gap: 0.625rem;
-	@include mobile-only {
-		@include hidden;
-	}
-	&__item:not(.is-main) {
-		cursor: pointer;
-		&:hover {
-			img {
-				outline: 2px solid $main;
-			}
-		}
-	}
+  display: grid;
+  grid-template-columns: repeat(4, 133px);
+  grid-template-rows: 450px 106px;
+  grid-gap: 0.625rem;
+  @include mobile-only {
+    @include hidden;
+  }
+  &__item:not(.is-main) {
+    cursor: pointer;
+    @include hover {
+      &:hover {
+        img {
+          outline: 2px solid $main;
+        }
+      }
+    }
+  }
 }
 .is-main {
-	grid-column: span 4;
+  grid-column: span 4;
 }
 .not-allowed {
-	opacity: 0.5;
-	cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .hidden {
-	@include hidden;
+  @include hidden;
 }

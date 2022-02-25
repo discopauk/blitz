@@ -15,95 +15,104 @@ $xxl: 3.125rem;
 $heavy: 5rem;
 
 %btn {
-	border: 1px solid $main;
-	border-radius: $sm;
+  border: 1px solid $main;
+  border-radius: $sm;
 }
 %more {
-	padding: $normal;
-	width: 100%;
-	line-height: 1.5;
-	border-radius: $xs;
-	transition: transform $tr,
-							opacity $tr;
+  padding: $normal;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: $xs;
+  transition: transform $tr, opacity $tr;
 }
 %main_bg {
-	background-color: $main;
-	color: $bg;
+  background-color: $main;
+  color: $bg;
 }
 %tr_text {
-	background-color: transparent;
-	color: $text;
+  background-color: transparent;
+  color: $text;
 }
 %arrow {
-	color: $main;
-	background: transparent;
-	img {
-		margin: 0 $xs;
-		transform: translateY(2px);
-	}
+  color: $main;
+  background: transparent;
+  img {
+    margin: 0 $xs;
+    transform: translateY(2px);
+  }
 }
 %title {
-	font-family: "Geometria-ExtraBold";
-	font-size: $xxl;
-	text-align: center;
-	margin-bottom: $xs;
+  font-family: "Geometria-ExtraBold";
+  font-size: $xxl;
+  text-align: center;
+  margin-bottom: $xs;
 }
 %desc {
-	text-align: center;
-	font-size: $semi;
+  text-align: center;
+  font-size: $semi;
 }
 
 %df_c_sb {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 %dfc {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 @mixin hidden {
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	border: 0;
-	padding: 0;
-	margin: -1px;
-	clip: rect(0 0 0 0) {
-		path: inset(50%);
-	}
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0) {
+    path: inset(50%);
+  }
 }
 @mixin mobile-only {
-	@media (max-width: 560px) {
-		@content;
-	}
+  @media (max-width: 560px) {
+    @content;
+  }
 }
 @mixin mobile-wide-only {
-	@media (max-width: 880px) {
-		@content;
-	}
+  @media (max-width: 880px) {
+    @content;
+  }
 }
 @mixin tablet-only {
-	@media (max-width: 1190px) {
-		@content;
-	}
+  @media (max-width: 1190px) {
+    @content;
+  }
 }
 @mixin desktop {
-	@media (max-width: 1510px) {
-		@content;
-	}
+  @media (max-width: 1510px) {
+    @content;
+  }
 }
 @mixin desktop-wide-only {
-	@media (min-width: 1601px) {
-		@content;
-	}
+  @media (min-width: 1601px) {
+    @content;
+  }
 }
 @mixin desktop-wide {
-	@media (max-width: 1890px) {
-		@content;
-	}
+  @media (max-width: 1890px) {
+    @content;
+  }
+}
+@mixin retina {
+  @media (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
 }

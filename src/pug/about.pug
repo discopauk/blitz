@@ -1,0 +1,49 @@
+section.about
+  h2.hidden О нас
+  .about__text
+    p.about__title= `${htmlWebpackPlugin.options.title} — на рынке недвижимости с 2008 года`
+    p= `${htmlWebpackPlugin.options.title} — международная компания по управлению недвижимостью и финансами. Основана в 2008 г. в Австрии. На сегодня представлена в Англии, Испании, Латвии, ОАЭ, Австрии и России, кроме того имеет партнерскую сеть более чем в десяти странах мира.`
+    p Мы предоставляем услуги полного цикла по приобретению и продаже недвижимости и управлению активами, предоставляя клиентам неизменно высокое качество сервиса. Наш подход позволяет оптимизировать инвестиционный портфель, диверсифицировать риски и обеспечить полную конфиденциальность сделки.
+    button.btn_main Узнать больше
+  .about__visual
+    ul.gallery
+      li.gallery__item.is-main
+        picture 
+          source(type="image/webp" 
+            srcset=require(`../../img/about1.webp`) + " 1x, " + require(`../../img/about1-2x.webp`) + " 2x")
+          img.gallery__image(src=require(`../../img/about1.jpg`) 
+            srcset=`../../img/about1-2x.jpg 2x` 
+            width="562" height="450", 
+            alt="" loading="lazy")
+      li.gallery__item
+      picture 
+        source(type="image/webp" 
+          srcset=require(`../../img/about2.webp`))
+        img.gallery__image(src=require(`../../img/about2.jpg`) 
+          srcset=`../../img/about2-2x.jpg 2x` 
+          width="133" height="106", 
+          alt="" loading="lazy")
+      li.gallery__item 
+      picture 
+        source(type="image/webp" 
+          srcset=require(`../../img/about3.webp`))
+        img.gallery__image(src=require(`../../img/about3.jpg`) 
+          srcset=`../../img/about3-2x.jpg 2x` 
+          width="133" height="106", 
+          alt="" loading="lazy")
+      li.gallery__item 
+      picture 
+        source(type="image/webp" 
+          srcset=require(`../../img/about4.webp`))
+        img.gallery__image(src=require(`../../img/about4.jpg`) 
+          srcset=`../../img/about4-2x.jpg 2x` 
+          width="133" height="106", 
+          alt="" loading="lazy")
+      li.gallery__item 
+      picture 
+        source(type="image/webp" 
+          srcset=require(`../../img/about5.webp`))
+        img.gallery__image(src=require(`../../img/about5.jpg`) 
+          srcset=`../../img/about5-2x.jpg 2x` 
+          width="133" height="106", 
+          alt="" loading="lazy")

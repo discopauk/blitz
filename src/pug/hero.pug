@@ -1,0 +1,23 @@
+section.hero
+  h1.hidden= htmlWebpackPlugin.options.title
+  p.hero__title= `Агентство с международным именем ${htmlWebpackPlugin.options.title}`
+  p.hero__desc
+    | Поможем продать, купить и арендовать 
+    br 
+    | недвижимость в Москве, районе Сити и области
+  dl.hero__list
+    .hero__item
+      dt 17
+      dd Работаем в 17 странах
+    .hero__item
+      dt 1963
+      dd Помогли 1963-м клиентам
+    .hero__item
+      dt 10
+      dd Лет на рынке недвижимости
+  .hero__gift
+    img(src=require("../../img/champane.svg"), alt="" width="60" height="73")
+    p
+      | Пройди тест и получи в подарок бутылку шампанского 
+      b Veuve Clicquot
+  button.btn_main Подобрать недвижимость
